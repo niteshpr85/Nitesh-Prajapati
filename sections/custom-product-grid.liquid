@@ -96,29 +96,30 @@ const addToCartBtn = document.getElementById("add-to-cart");
 let selectedVariantId = null;
 
 // OPEN POPUP
-document.querySelectorAll(".product-card").forEach(card => {
-  card.addEventListener("click", () => {
-    popup.classList.remove("hidden");
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".product-card").forEach(card => {
+    card.addEventListener("click", () => {
+      popup.classList.remove("hidden");
 
-    title.innerText = card.dataset.title;
-    price.innerText = card.dataset.price;
-    desc.innerText = card.dataset.description;
+      title.innerText = card.dataset.title;
+      price.innerText = card.dataset.price;
+      desc.innerText = card.dataset.description;
 
-    const variants = JSON.parse(card.dataset.variants);
+      const variants = JSON.parse(card.dataset.variants);
 
-    variantSelect.innerHTML = "";
+      variantSelect.innerHTML = "";
 
-    variants.forEach(v => {
-      const option = document.createElement("option");
-      option.value = v.id;
-      option.text = v.title;
-      variantSelect.appendChild(option);
+      variants.forEach(v => {
+        const option = document.createElement("option");
+        option.value = v.id;
+        option.text = v.title;
+        variantSelect.appendChild(option);
+      });
+
+      selectedVariantId = variants[0].id;
     });
-
-    selectedVariantId = variants[0].id;
   });
 });
-
 // CHANGE VARIANT
 variantSelect.addEventListener("change", (e) => {
   selectedVariantId = e.target.value;
