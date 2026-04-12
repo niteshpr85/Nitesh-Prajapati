@@ -2,7 +2,7 @@
   <div class="banner-content">
     <h1>{{ section.settings.heading }}</h1>
     <p>{{ section.settings.subheading }}</p>
-    <a href="#" class="banner-btn">
+    <a href="{{ section.settings.button_link }}" class="banner-btn">
       {{ section.settings.button_text }}
     </a>
   </div>
@@ -10,7 +10,7 @@
 
 <style>
 .custom-banner {
-  height: 80vh;
+  height: 90vh;
   background: #f5f5f5;
   display: flex;
   align-items: center;
@@ -19,27 +19,40 @@
   padding: 20px;
 }
 
+.banner-content {
+  max-width: 600px;
+}
+
 .banner-content h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
+  font-size: 48px;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
 
 .banner-content p {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  color: #666;
 }
 
 .banner-btn {
   display: inline-block;
-  padding: 12px 30px;
+  padding: 14px 32px;
   background: black;
   color: white;
   text-decoration: none;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .banner-btn:hover {
-  transform: scale(1.1);
+  transform: translateY(-3px);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .banner-content h1 {
+    font-size: 32px;
+  }
 }
 </style>
 
@@ -64,6 +77,11 @@
       "id": "button_text",
       "label": "Button Text",
       "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
     }
   ],
   "presets": [
