@@ -209,19 +209,20 @@
       "settings": {
         "heading": "Welcome to Our Store",
         "subheading": "Shop the best products",
-        "button_text": "Shop Now"
+        "button_text": "Shop Now",
+        "button_link": ""
       }
     },
     "custom_product_grid_x66zNE": {
       "type": "custom-product-grid",
       "name": "Custom Product Grid",
       "settings": {
-        "product_1": "",
-        "product_2": "",
-        "product_3": "",
-        "product_4": "",
-        "product_5": "",
-        "product_6": ""
+        "product_1": "blue-silk-tuxedo",
+        "product_2": "blue-silk-tuxedo",
+        "product_3": "dark-denim-top",
+        "product_4": "dark-denim-top",
+        "product_5": "chequered-red-shirt",
+        "product_6": "led-high-tops"
       }
     }
   },
